@@ -1,0 +1,10 @@
+<?php
+
+$_PLUGIN_CONFIG['LANG'] = array(
+	'NAME'=>'Status',
+	'DESCRIPTION'=>'Displays the status of a minecraft server',
+	'IP'=>'IP',
+	'ICON'=>'Icon Size'
+);
+
+?>
