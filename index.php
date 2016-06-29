@@ -1,3 +1,11 @@
+<?php
+//Adjustable Varables
+
+$iconSize = 20;
+$serverIP = "we.buildbig.eu:25586";
+$serverName = "Build Big";
+
+?>
 <!DOCTYPE html>
 <!-- saved from url=(0039)http://getbootstrap.com/examples/cover/ -->
 
@@ -12,7 +20,7 @@
     <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 
-    <title>Build Big </title><!-- Bootstrap core CSS -->
+    <title><?php echo($serverName) ?></title><!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"><!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet" type="text/css">
     <link href="cover.css" rel="stylesheet" type="text/css"><!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -29,7 +37,7 @@
                 
                         <?php
 
-$string = file_get_contents("https://mcapi.ca/query/we.buildbig.eu:25586/info");
+$string = file_get_contents("https://mcapi.ca/query/".$serverIP."/info");
 $string = rtrim($string, "\0");
 $jsonDecode = json_decode(trim($string), true);
 
@@ -44,10 +52,9 @@ if($jsonDecode['status'] == false){
     $string = file_get_contents("https://mcapi.ca/query/we.buildbig.eu:25586/list");
     $string = rtrim($string, "\0");
     $jsonDecode = json_decode(trim($string), true);
-    echo "<p class='lead'>Players:</p>";
     echo "<table class='players-list'>";
     foreach($jsonDecode['Players']['list'] as $player){
-       echo("<tr class='player'><td class='icon'><img src='https://minotar.net/avatar/".$player."/40.png'</img><td>".$player."</td></tr>");
+       echo("<tr class='player'><td class='icon'><img src='https://minotar.net/avatar/".$player."/".$iconSize.".png'</img><td>".$player."</td></tr>");
     }
 	echo "</table>";
 
