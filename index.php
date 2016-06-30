@@ -2,7 +2,7 @@
 //Adjustable Varables
 
 $iconSize = 20;
-$serverIP = "we.buildbig.eu:25586";
+$serverIP = "Mc.Hypixel.Net";
 $serverName = "Build Big";
 
 ?>
@@ -36,12 +36,14 @@ if($jsonDecode['status'] == false){?>
                         <h1 class="cover-heading">Online: <i id="online" class="fa fa-check green"></i></h1><br>
                   <?php     echo('<p class="lead">Version: ' .$jsonDecode['version']);
 	echo('<p class="lead">Players online: '. $jsonDecode['players']['online'].'/'.  $jsonDecode['players']['max'].'</p>');
-	$string = file_get_contents("https://mcapi.ca/query/we.buildbig.eu:25586/list");
+	$string = file_get_contents("https://mcapi.ca/query/" .$serverIP. "/list");
 	$string = rtrim($string, "\0");
 	$jsonDecode = json_decode(trim($string), true);
 	echo "<table class='players-list'>";
+	if ($jsonDecode['Players']['list']){
 	foreach($jsonDecode['Players']['list'] as $player){
 		echo("<tr class='player'><td class='icon'><img src='https://minotar.net/avatar/".$player."/".$iconSize.".png'</img><td>".$player."</td></tr>");
+	}
 	}
 	echo "</table>";
 
