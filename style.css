@@ -1,0 +1,18 @@
+body{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: Helvetica, sans-serif;
+}
+.green{
+	color:#66d89a;
+}
+
+.red{
+	color:#de3b3b
+}
+.players-list{
+	margin-left: auto;
+	margin-right: auto;
+	
+}
