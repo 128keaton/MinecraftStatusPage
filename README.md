@@ -5,7 +5,7 @@ A simple Minecraft status page
 
 ### Standalone:
 
-![standalone2](img/main.png)
+![standalone2](img/main-2.png)
 
 
 ### Nibbleblog:
